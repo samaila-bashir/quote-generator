@@ -11,6 +11,15 @@ function newQuote()
 {
     // Pick a random quote from apiQuote array
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+
+    if (quote.text.length > 120)
+    {
+        quoteText.classList.add('long-quote');
+    } else
+    {
+        quoteText.classList.remove('long-quote');
+    }
+
     quoteText.textContent = quote.text;
 
     if (!quote.author)
